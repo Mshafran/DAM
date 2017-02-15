@@ -1,3 +1,9 @@
+//Team DAM
+//Daniel Regassa, Andrew Qu, Mark Shafran
+//APCS2 pd05
+//HW07 -- What Does The Data Say?
+//2017-02-15
+
 /*======================================
   class MergeSortTester
 
@@ -104,9 +110,35 @@ public class MergeSortTester
      *  YOUR APPARATUS FOR GENERATING EXECUTION 
      *  TIME DATA...>
      ******************************/
+
+    public static int[] randomArr( int n ) {
+	int[] retArr = new int[n];
+	for (int x=0; x < retArr.length ; x++) {
+	    retArr[x] = (int) (Math.random()*1000000000000000000000000);
+	}
+	return retArr;
+    }
+    
+    public static long mergeTime( int[] arr, int trials ) {
+	int x = 0;
+	long timeNow = System.nanotime();
+	while (x< trials) {
+	    sort(arr);
+	    x++;
+	}
+	long timeElapsed = System.nanotime() - timeNow;
+	long avgTime = timeElapsed /((long)( trials));
+	return avgTime;
+    }
+	
     public static void main( String[] args ) 
     {
-
+	int[] arr1 = randomArr( 1 );
+	long size1 = mergeTime( arr1, 1000000000);
+	System.out.println("This is the avg time for mergeSort of array of size 1: " + size1);
+	//STILL HAVE TO REPEAT STUFF ABOVE WITH A BUNCH OF OTHER VALUES FOR RANDOMARR, PRIMARILY 10, 100, 1000, 10000000, 10000000000000, ETC
+	
+	
     }//end main
 
 }//end class

@@ -114,19 +114,19 @@ public class MergeSortTester
     public static int[] randomArr( int n ) {
 	int[] retArr = new int[n];
 	for (int x=0; x < retArr.length ; x++) {
-	    retArr[x] = (int) (Math.random()*1000000000000000000000000);
+	    retArr[x] = (int) (Math.random()*1000000);
 	}
 	return retArr;
     }
     
     public static long mergeTime( int[] arr, int trials ) {
 	int x = 0;
-	long timeNow = System.nanotime();
+	long timeNow = System.nanoTime();
 	while (x< trials) {
 	    sort(arr);
 	    x++;
 	}
-	long timeElapsed = System.nanotime() - timeNow;
+	long timeElapsed = System.nanoTime() - timeNow;
 	long avgTime = timeElapsed /((long)( trials));
 	return avgTime;
     }
@@ -136,7 +136,22 @@ public class MergeSortTester
 	int[] arr1 = randomArr( 1 );
 	long size1 = mergeTime( arr1, 1000000000);
 	System.out.println("This is the avg time for mergeSort of array of size 1: " + size1);
-	//STILL HAVE TO REPEAT STUFF ABOVE WITH A BUNCH OF OTHER VALUES FOR RANDOMARR, PRIMARILY 10, 100, 1000, 10000000, 10000000000000, ETC
+	
+	int[] arr2 = randomArr( 10 );
+	long size2 = mergeTime( arr2, 1000);
+	System.out.println("This is the avg time for mergeSort of array of size 10: " + size2);
+
+	int[] arr3 = randomArr( 100 );
+	long size3 = mergeTime( arr3, 1000);
+	System.out.println("This is the avg time for mergeSort of array of size 100: " + size3);
+	
+	int[] arr4 = randomArr( 1000 );
+	long size4 = mergeTime( arr4, 1000);
+	System.out.println("This is the avg time for mergeSort of array of size 1000: " + size4);
+	
+	int[] arr5 = randomArr( 10000 );
+	long size5 = mergeTime( arr5, 1000);
+	System.out.println("This is the avg time for mergeSort of array of size 10000: " + size5);
 	
 	
     }//end main

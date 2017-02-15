@@ -136,7 +136,7 @@ public class MergeSortTester
 	int[] arr1 = randomArr( 1 );
 	long size1 = mergeTime( arr1, 1000000000);
 	System.out.println("This is the avg time for mergeSort of array of size 1: " + size1);
-	
+
 	int[] arr2 = randomArr( 10 );
 	long size2 = mergeTime( arr2, 1000);
 	System.out.println("This is the avg time for mergeSort of array of size 10: " + size2);
@@ -144,15 +144,25 @@ public class MergeSortTester
 	int[] arr3 = randomArr( 100 );
 	long size3 = mergeTime( arr3, 1000);
 	System.out.println("This is the avg time for mergeSort of array of size 100: " + size3);
-	
-	int[] arr4 = randomArr( 1000 );
+
+	int[] arr4 = randomArr( 512 );
 	long size4 = mergeTime( arr4, 1000);
-	System.out.println("This is the avg time for mergeSort of array of size 1000: " + size4);
-	
-	int[] arr5 = randomArr( 10000 );
+	System.out.println("This is the avg time for mergeSort of array of size 512: " + size4);
+	int[] arr5 = randomArr( 1000 );
 	long size5 = mergeTime( arr5, 1000);
-	System.out.println("This is the avg time for mergeSort of array of size 10000: " + size5);
+	System.out.println("This is the avg time for mergeSort of array of size 1000: " + size5);
+
+	int[] arr6 = randomArr( 4096 );
+	long size6 = mergeTime( arr6, 1000);
+	System.out.println("This is the avg time for mergeSort of array of size 4096: " + size6);
 	
+	int[] arr7 = randomArr( 10000 );
+	long size7 = mergeTime( arr7, 1000);
+	System.out.println("This is the avg time for mergeSort of array of size 10000: " + size7);
+
+	int[] arr8 = randomArr( 100000 );
+	long size8 = mergeTime( arr8, 1000);
+	System.out.println("This is the avg time for mergeSort of array of size 100000: " + size8);
 	
     }//end main
 
